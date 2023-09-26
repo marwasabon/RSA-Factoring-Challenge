@@ -14,18 +14,9 @@ def factorize(n):
 
 def factorize_file(file_path):
 
-    start_time = time.time()
-
     numbers = []
-    try:
-        with open(file_path, 'r') as file:
-            numbers = [int(line.strip()) for line in file]
-    except FileNotFoundError:
-        print(f"File '{file_path}' not found.")
-        return
-    except ValueError:
-        print(f"Invalid input in file '{file_path}'.")
-        return
+    file = open(file_path, 'r')
+    numbers = [int(line.strip()) for line in file]
     for number in numbers:
         factorization = factorize(number)
         if factorization is not None:
