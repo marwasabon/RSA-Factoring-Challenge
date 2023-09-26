@@ -27,8 +27,6 @@ def factorize_file(file_path):
         print(f"Invalid input in file '{file_path}'.")
         return
     for number in numbers:
-        if time.time() - start_time > 5:
-            break
         factorization = factorize(number)
         if factorization is not None:
             p, q = factorization
